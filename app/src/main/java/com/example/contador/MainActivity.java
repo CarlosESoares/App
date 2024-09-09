@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     TextView textView;
 
-    Random contador = new Random(20);
+    Random Contador = new Random(20);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 Button b = (Button) view;
 
 
-                textView.setText("valor " + contador);
+                textView.setText("Sorteio " + Contador.nextInt(30));
 
             }
         });
