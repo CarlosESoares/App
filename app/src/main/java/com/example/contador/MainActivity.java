@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 float a;
 
                 a = Float.valueOf(altura.getText().toString());
-
-                resultado = p/a;
+                float a2 = a*a;
+                resultado = p/a2;
 
 
                 Button b = (Button) view;
