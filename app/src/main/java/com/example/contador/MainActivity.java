@@ -2,6 +2,8 @@ package com.example.contador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Person;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,42 +40,15 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+                i.putExtra("peso",peso.getText().toString());
+                i.putExtra("altura",altura.getText().toString());
 
-                float p;
-                p = Float.parseFloat(peso.getText().toString());
-                float a;
+                startActivity(i);
 
-                a = Float.valueOf(altura.getText().toString());
-                float a2 = a*a;
-                resultado = p/a2;
+        }
 
-
-                Button b = (Button) view;
-
-                if (resultado <18.5){
-                    textView.setText(" Abaixo do peso: " + resultado );
-
-                }
-                else if (resultado > 18.5 && resultado <24.9){
-
-                    textView.setText("Peso normal:" + resultado);
-
-                } else if (resultado > 25 && resultado < 29.9) {
-                    textView.setText("Sobre Peso:" + resultado);
-                    
-                    
-                } else if (resultado >30 && resultado<34.9) {
-                    textView.setText("Obesidade 1:" + resultado);
-                    
-                } else if (resultado >35 && resultado<39.9) {
-                    textView.setText("Obesidade 2:" + resultado);
-
-                    
-                }
-                else {
-                    textView.setText("Obesidade 3:" + resultado);
-                }
-            }
         });
     }
-    }
+}
+
