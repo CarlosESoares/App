@@ -3,7 +3,6 @@ package com.example.contador;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +19,7 @@ public class MainActivity2 extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String peso = bundle.getString("peso");
         String altura = bundle.getString("altura");
-        imagem.findViewById(R.id.imageView);
+        imagem.findViewById(R.id.IMCImagem);
         textView.findViewById(R.id.IMCRESULTADO);
 
         float p;
