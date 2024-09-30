@@ -39,7 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
             textView.setText("Peso normal:" + resultado);
             imagem.setImageResource(R.drawable.normal);
         } else if (resultado > 25 && resultado < 29.9) {
-            textView.setText("Sobre Peso:" + resultado);]
+            textView.setText("Sobre Peso:" + resultado);
             imagem.setImageResource(R.drawable.sobrepeso);
 
         } else if (resultado > 30 && resultado < 34.9) {
