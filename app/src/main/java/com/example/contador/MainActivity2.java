@@ -19,8 +19,8 @@ public class MainActivity2 extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String peso = bundle.getString("peso");
         String altura = bundle.getString("altura");
-        imagem.findViewById(R.id.IMCImagem);
-        textView.findViewById(R.id.IMCRESULTADO);
+        imagem=findViewById(R.id.IMCImagem);
+        textView=findViewById(R.id.IMCRESULTADO);
 
         float p;
         p = Float.parseFloat(peso);
