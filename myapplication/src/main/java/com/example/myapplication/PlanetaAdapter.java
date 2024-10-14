@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,11 +15,12 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlanetaAdapter extends ArrayAdapter<Planetas> {
+public class        PlanetaAdapter extends ArrayAdapter<Planetas> {
 
     Context mCOntext;
     Integer mResource;
-    List mLystPlanetas;
+    List<Planetas> mLystPlanetas;
+
 
     public PlanetaAdapter(@NonNull Context context, int resource, @NonNull List<Planetas> objects) {
 
@@ -26,14 +29,23 @@ public class PlanetaAdapter extends ArrayAdapter<Planetas> {
         mCOntext=context;
         mResource=resource;
         mLystPlanetas=  objects;
+
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = new LayoutInflater.from(mCOntext);
-        convertView=layoutInflater.inflate(mResource,parent,false);
+    public View getView(int position, @Nullable View v, @NonNull ViewGroup parent) {
+        LayoutInflater layoutInflater = LayoutInflater.from(mCOntext);
 
-        return convertView;
+
+        v = layoutInflater.inflate(mResource,parent,false);
+
+        TextView tvNomePlaneta = v.findViewById(R.id.textViewNome);
+        ImageView imageView =v.findViewById(R.id.imageView);
+
+        Planetas planeta =mLystPlanetas.get(position);
+        tvNomePlaneta.setText(planeta.nome);
+        imageView.setImageResource(planeta.integer);
+                return v;
     }
 }
