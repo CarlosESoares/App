@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'com.example.contador'
+    namespace 'com.example.sqllite'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.contador"
+        applicationId "com.example.sqllite"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
